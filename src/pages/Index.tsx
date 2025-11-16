@@ -18,14 +18,24 @@ const Index = () => {
 
     // Handle scroll-based active section detection
     const handleScroll = () => {
-      const sections = ["home", "resume", "projects", "blog", "certificates", "gallery", "contact"];
+      const sections = [
+        "home",
+        "resume",
+        "projects",
+        "certificates",
+        "gallery",
+        "contact",
+      ];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
             setActiveSection(section);
             break;
           }
@@ -51,7 +61,7 @@ const Index = () => {
         <HomeSection />
         <ResumeSection />
         <ProjectsSection />
-        <BlogSection />
+        {/* <BlogSection /> */}
         <CertificatesSection />
         <GallerySection />
         <ContactSection />
@@ -59,7 +69,8 @@ const Index = () => {
       <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
         <div className="max-w-7xl mx-auto px-4">
           <p className="font-mono">
-            <span className="command-prompt">$</span> echo "Built with React, TypeScript, and Tailwind CSS" | cowsay
+            <span className="command-prompt">$</span> echo "Built with React,
+            TypeScript, and Tailwind CSS" | cowsay
           </p>
           <p className="mt-2">© 2024 Pranav Hemanth. All rights reserved.</p>
         </div>

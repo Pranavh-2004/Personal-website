@@ -38,6 +38,17 @@ const projects = [
     award: "4th Place, CIDECODE 2.0",
   },
   {
+    id: 5,
+    title: "ReRo-robowars-2023",
+    description:
+      "Autonomous line-following bot controlled via Python with real-time sensor data guiding motor commands over socket connection to ESP32",
+    tech: ["Python", "Robotics", "Client-Server", "ROS2", "ESP32"],
+    github: "https://github.com/Pranavh-2004/ReRo-robowars-2023",
+    demo: null,
+    lines: 800,
+    award: "1st Place, ReRo Robowars 3.0",
+  },
+  {
     id: 4,
     title: "HAWKE Framework",
     description:
@@ -117,16 +128,6 @@ const projects = [
     github: "https://github.com/Pranavh-2004/ShareVault",
     demo: null,
     lines: 4800,
-  },
-  {
-    id: 13,
-    title: "ResumeBuilder",
-    description:
-      "An automated resume builder in Python that generates professional PDFs based on user data and customizable templates",
-    tech: ["Python", "CLI", "PDF Generation", "ReportLab", "Automation"],
-    github: "https://github.com/Pranavh-2004/ResumeBuilder",
-    demo: null,
-    lines: 1900,
   },
 ];
 

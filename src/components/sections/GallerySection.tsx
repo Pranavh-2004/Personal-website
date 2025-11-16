@@ -5,16 +5,48 @@ import { Dialog, DialogContent } from "../ui/dialog";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const galleryImages = [
-  { id: 1, title: "Conference 2023", description: "Tech conference presentation" },
-  { id: 2, title: "Hackathon Win", description: "Winner at university hackathon" },
-  { id: 3, title: "Team Project", description: "Collaborating with the team" },
-  { id: 4, title: "Workshop", description: "Conducting a coding workshop" },
-  { id: 5, title: "Code Sprint", description: "24-hour coding marathon" },
-  { id: 6, title: "Meetup", description: "Local developer meetup" },
+  {
+    id: 1,
+    title: "CIE Finals Presentation",
+    description: "Presenting at CIE Finals",
+    src: "/gallery/CIE_finals_me_presenting.jpeg",
+  },
+  {
+    id: 2,
+    title: "CIDECODE Win",
+    description: "Winner at CIDECODE Hackathon",
+    src: "/gallery/Cidecode_win.jpeg",
+  },
+  {
+    id: 3,
+    title: "IIT Kanpur",
+    description: "At IIT Kanpur",
+    src: "/gallery/IIT_Kanpur_me.jpeg",
+  },
+  {
+    id: 4,
+    title: "IIT Madras",
+    description: "At IIT Madras",
+    src: "/gallery/IIT_Madras_me.jpeg",
+  },
+  {
+    id: 5,
+    title: "Kodikon Win",
+    description: "Winner at Kodikon 3.0",
+    src: "/gallery/Kodikon_win.jpeg",
+  },
+  {
+    id: 6,
+    title: "TAMS Patna",
+    description: "Marketing at TAMS Patna",
+    src: "/gallery/TAMS_Patna_marketing.jpeg",
+  },
 ];
 
 export const GallerySection = () => {
-  const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
+  const [selectedImage, setSelectedImage] = useState<
+    (typeof galleryImages)[0] | null
+  >(null);
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   return (
@@ -31,14 +63,24 @@ export const GallerySection = () => {
               <div
                 key={image.id}
                 onClick={() => setSelectedImage(image)}
-                className={`aspect-square bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg border border-border hover:border-primary smooth-transition cursor-pointer group overflow-hidden ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
+                className={`aspect-square rounded-lg border border-border hover:border-primary smooth-transition cursor-pointer group overflow-hidden ${
+                  isVisible ? "animate-fade-in" : "opacity-0"
+                }`}
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
-                <div className="w-full h-full flex flex-col items-center justify-center p-4 group-hover:scale-105 smooth-transition">
-                  <ImageIcon className="text-primary mb-2" size={32} />
-                  <div className="text-xs font-mono text-center">
-                    <div className="font-bold">{image.title}</div>
-                    <div className="text-muted-foreground text-[10px] mt-1">{image.description}</div>
+                <div className="w-full h-full relative group-hover:scale-105 smooth-transition">
+                  <img
+                    src={image.src}
+                    alt={image.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
+                    <div className="text-xs font-mono text-white">
+                      <div className="font-bold">{image.title}</div>
+                      <div className="text-gray-300 text-[10px] mt-1">
+                        {image.description}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -63,16 +105,27 @@ export const GallerySection = () => {
         </div>
       </TerminalWindow>
 
-      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+      <Dialog
+        open={!!selectedImage}
+        onOpenChange={() => setSelectedImage(null)}
+      >
         <DialogContent className="max-w-3xl">
           {selectedImage && (
             <div className="space-y-4">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg flex items-center justify-center">
-                <ImageIcon className="text-primary" size={64} />
+              <div className="w-full rounded-lg overflow-hidden">
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.title}
+                  className="w-full h-auto object-contain max-h-[70vh]"
+                />
               </div>
               <div>
-                <h3 className="font-bold text-xl mb-2">{selectedImage.title}</h3>
-                <p className="text-muted-foreground">{selectedImage.description}</p>
+                <h3 className="font-bold text-xl mb-2">
+                  {selectedImage.title}
+                </h3>
+                <p className="text-muted-foreground">
+                  {selectedImage.description}
+                </p>
               </div>
             </div>
           )}

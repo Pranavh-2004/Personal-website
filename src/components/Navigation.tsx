@@ -20,7 +20,7 @@ export const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
     { id: "home", label: "~/home" },
     { id: "resume", label: "~/resume" },
     { id: "projects", label: "~/projects" },
-    { id: "blog", label: "~/blog" },
+    // { id: "blog", label: "~/blog" },
     { id: "certificates", label: "~/certificates" },
     { id: "gallery", label: "~/gallery" },
     { id: "contact", label: "~/contact" },
@@ -61,21 +61,33 @@ export const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
               onClick={toggleTheme}
               className="ml-4"
             >
-              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {isDark ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-2">
             <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {isDark ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
             </Button>
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>

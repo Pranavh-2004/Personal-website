@@ -20,30 +20,99 @@ const commands: Record<string, string | JSX.Element> = {
       <div>• help - Show this help message</div>
     </div>
   ),
-  whoami: "Pranav Hemanth - Full Stack Developer passionate about creating amazing web experiences",
+  whoami:
+    "Pranav Hemanth - Computer Science Student & Cybersecurity Researcher at PES University (CGPA 9.18/10.0). Currently Research Intern @ C3iHub, IIT Kanpur. 5× Hackathon Winner | Top-25 MIST OSINT Challenge 2025",
   skills: (
-    <div className="space-y-1">
-      <div className="text-primary">Technical Skills:</div>
-      <div>• Frontend: React, TypeScript, Tailwind CSS</div>
-      <div>• Backend: Node.js, Python, PostgreSQL</div>
-      <div>• Tools: Git, Docker, VS Code</div>
+    <div className="space-y-2">
+      <div className="text-primary font-bold">Technical Skills:</div>
+      <div>
+        <div className="text-primary">Programming Languages:</div>
+        <div className="pl-4">
+          Python, C/C++, Go, JavaScript, TypeScript, SQL
+        </div>
+      </div>
+      <div>
+        <div className="text-primary">ML/AI:</div>
+        <div className="pl-4">
+          NumPy, PyTorch, Generative AI, RAG, Knowledge Graphs
+        </div>
+      </div>
+      <div>
+        <div className="text-primary">Web Development:</div>
+        <div className="pl-4">Node.js, React.js, Next.js, Express, MongoDB</div>
+      </div>
+      <div>
+        <div className="text-primary">Cybersecurity & DevOps:</div>
+        <div className="pl-4">
+          OSINT, Penetration Testing, Docker, Kubernetes, CI/CD, AWS Security
+        </div>
+      </div>
+      <div>
+        <div className="text-primary">Security Tools:</div>
+        <div className="pl-4">
+          Wazuh, OSSEC, Suricata, Zeek, Dgraph, NetworkX
+        </div>
+      </div>
     </div>
   ),
   projects: (
-    <div className="space-y-1">
-      <div className="text-primary">Featured Projects:</div>
-      <div>• E-Commerce Platform</div>
-      <div>• AI Chat Assistant</div>
-      <div>• Task Management App</div>
-      <div>• Weather Dashboard</div>
+    <div className="space-y-2">
+      <div className="text-primary font-bold">Featured Projects:</div>
+      <div>
+        <div className="text-primary">🏆 Hackathon Winners:</div>
+        <div className="pl-4 space-y-1">
+          <div>
+            • Blockheads - 1st Place Arithemenia (Blockchain Voting, 5600 lines)
+          </div>
+          <div>
+            • R3ND3R - 1st Place Kodikon 3.0 (React Testing, 3100 lines)
+          </div>
+          <div>
+            • IoTrace - 4th Place CIDECODE 2.0 (WearOS Forensics, 4200 lines)
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className="text-primary">🔒 Security Research:</div>
+        <div className="pl-4 space-y-1">
+          <div>
+            • HAWKE Framework - Graph-based threat detection (8500 lines)
+          </div>
+          <div>
+            • PolymorphicMalware - Educational malware research (2400 lines)
+          </div>
+          <div>• WinSec-DLL-Hijacking - Windows security demo (1800 lines)</div>
+          <div>• BlueSense - BLE scanner & monitor (2200 lines)</div>
+        </div>
+      </div>
+      <div>
+        <div className="text-primary">🤖 AI/ML & Tools:</div>
+        <div className="pl-4 space-y-1">
+          <div>
+            • GPT-From-Scratch - Transformer implementation (3100 lines)
+          </div>
+          <div>• TermBrowse - Terminal web browser (2900 lines)</div>
+          <div>• ResumeBuilder - PDF automation (1900 lines)</div>
+        </div>
+      </div>
+      <div>
+        <div className="text-primary">🌐 Web3 & FinTech:</div>
+        <div className="pl-4 space-y-1">
+          <div>• ShareVault - Decentralized storage with ZKP (4800 lines)</div>
+          <div>• AlgoTrader - Algorithmic trading bot (3600 lines)</div>
+        </div>
+      </div>
     </div>
   ),
   contact: (
     <div className="space-y-1">
-      <div className="text-primary">Contact Information:</div>
-      <div>• Email: pranav@example.com</div>
-      <div>• GitHub: github.com/pranavhemanth</div>
-      <div>• LinkedIn: linkedin.com/in/pranavhemanth</div>
+      <div className="text-primary font-bold">Contact Information:</div>
+      <div>• Email: pranav2004@gmail.com</div>
+      <div>• GitHub: github.com/Pranavh-2004</div>
+      <div>• LinkedIn: linkedin.com/in/pranav-hemanth</div>
+      <div className="pt-2 text-muted-foreground">
+        Open to research opportunities and collaborations!
+      </div>
     </div>
   ),
   joke: "Why do programmers prefer dark mode? Because light attracts bugs! 🐛",
@@ -53,7 +122,10 @@ const commands: Record<string, string | JSX.Element> = {
 export const InteractiveTerminal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [history, setHistory] = useState<Command[]>([
-    { input: "", output: "Type 'help' to see available commands. Press ESC to close." },
+    {
+      input: "",
+      output: "Type 'help' to see available commands. Press ESC to close.",
+    },
   ]);
   const [input, setInput] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
@@ -91,15 +163,17 @@ export const InteractiveTerminal = () => {
     if (!input.trim()) return;
 
     const trimmedInput = input.trim().toLowerCase();
-    
+
     if (trimmedInput === "clear") {
       setHistory([]);
       setInput("");
       return;
     }
 
-    const output = commands[trimmedInput] || `Command not found: ${input}. Type 'help' for available commands.`;
-    
+    const output =
+      commands[trimmedInput] ||
+      `Command not found: ${input}. Type 'help' for available commands.`;
+
     setHistory([...history, { input, output }]);
     setInput("");
   };
@@ -111,7 +185,9 @@ export const InteractiveTerminal = () => {
         className="fixed bottom-6 right-6 bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-3 rounded-lg shadow-lg smooth-transition hover:scale-105 z-50 font-mono text-sm flex items-center gap-2"
       >
         <span className="hidden sm:inline">Terminal</span>
-        <kbd className="bg-primary-foreground/20 px-2 py-1 rounded text-xs">⌘K</kbd>
+        <kbd className="bg-primary-foreground/20 px-2 py-1 rounded text-xs">
+          ⌘K
+        </kbd>
       </button>
     );
   }
@@ -141,7 +217,7 @@ export const InteractiveTerminal = () => {
             <X size={18} />
           </button>
         </div>
-        
+
         <div
           ref={historyRef}
           className="flex-1 overflow-auto p-4 space-y-3 terminal-content"
