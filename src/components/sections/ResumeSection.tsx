@@ -9,7 +9,7 @@ import {
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const ResumeSection = () => {
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.05 });
 
   return (
     <section id="resume" className="min-h-screen py-20 px-4" ref={ref}>
