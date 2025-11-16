@@ -41,13 +41,12 @@ export const HomeSection = () => {
                 <img
                   src="https://res.cloudinary.com/djkl22q57/image/upload/c_fill,f_auto,g_face,h_200,q_auto,w_200/v1/portfolio/portfolio/profile?_a=BAMAMiOc0"
                   alt="Pranav Hemanth"
-                  className="w-32 h-32 rounded-lg object-cover border-2 border-primary shadow-lg"
+                  className="w-32 h-32 rounded-lg object-cover border-2 border-primary shadow-lg flex-shrink-0"
                 />
-                <div className="flex-1 space-y-4 min-w-0 w-full">
-                  <div className="code-block w-full">
-                    <div className="overflow-x-auto">
-                      <pre className="text-xs sm:text-sm whitespace-pre min-w-0">
-                        <code>{`{
+                <div className="flex-1 min-w-0 space-y-4">
+                  <div className="code-block overflow-x-auto">
+                    <pre className="text-xs sm:text-sm whitespace-pre min-w-0">
+                      <code>{`{
   "name": "Pranav Hemanth",
   "role": "Computer Science Student & Cybersecurity Researcher",
   "location": "Bangalore, India",
@@ -60,8 +59,7 @@ export const HomeSection = () => {
     "linkedin": "linkedin.com/in/pranav-hemanth"
   }
 }`}</code>
-                      </pre>
-                    </div>
+                    </pre>
                   </div>
                   <div className="text-muted-foreground space-y-2">
                     <p className="flex items-start gap-2">
