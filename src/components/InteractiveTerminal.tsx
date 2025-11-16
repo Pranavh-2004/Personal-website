@@ -20,8 +20,24 @@ const commands: Record<string, string | JSX.Element> = {
       <div>• help - Show this help message</div>
     </div>
   ),
-  whoami:
-    "Pranav Hemanth - Computer Science Student & Cybersecurity Researcher at PES University (CGPA 9.18/10.0). Currently Research Intern @ C3iHub, IIT Kanpur. 5× Hackathon Winner | Top-25 MIST OSINT Challenge 2025",
+  whoami: (
+    <div className="flex flex-col sm:flex-row gap-4 items-start">
+      <img
+        src="https://res.cloudinary.com/djkl22q57/image/upload/c_fill,f_auto,g_face,h_200,q_auto,w_200/v1/portfolio/portfolio/profile?_a=BAMAMiOc0"
+        alt="Pranav Hemanth"
+        className="w-32 h-32 rounded-lg object-cover border-2 border-primary"
+      />
+      <div className="space-y-1 break-words flex-1">
+        <div className="font-bold text-lg">Pranav Hemanth</div>
+        <div>
+          Computer Science Student & Cybersecurity Researcher at PES University
+          (CGPA 9.18/10.0)
+        </div>
+        <div>Currently Research Intern @ C3iHub, IIT Kanpur</div>
+        <div>5× Hackathon Winner | Top-25 MIST OSINT Challenge 2025</div>
+      </div>
+    </div>
+  ),
   skills: (
     <div className="space-y-2">
       <div className="text-primary font-bold">Technical Skills:</div>
@@ -105,11 +121,13 @@ const commands: Record<string, string | JSX.Element> = {
     </div>
   ),
   contact: (
-    <div className="space-y-1">
+    <div className="space-y-1 break-words">
       <div className="text-primary font-bold">Contact Information:</div>
-      <div>• Email: pranav2004@gmail.com</div>
-      <div>• GitHub: github.com/Pranavh-2004</div>
-      <div>• LinkedIn: linkedin.com/in/pranav-hemanth</div>
+      <div className="break-all">• Email: pranav2004@gmail.com</div>
+      <div className="break-all">• GitHub: github.com/Pranavh-2004</div>
+      <div className="break-all">
+        • LinkedIn: linkedin.com/in/pranav-hemanth
+      </div>
       <div className="pt-2 text-muted-foreground">
         Open to research opportunities and collaborations!
       </div>

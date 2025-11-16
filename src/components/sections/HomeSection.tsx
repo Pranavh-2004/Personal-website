@@ -38,9 +38,11 @@ export const HomeSection = () => {
           {showContent && (
             <div className="animate-fade-in space-y-6">
               <div className="flex flex-col md:flex-row items-start gap-6">
-                <div className="w-32 h-32 rounded-lg bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center text-white">
-                  <User size={64} />
-                </div>
+                <img
+                  src="https://res.cloudinary.com/djkl22q57/image/upload/c_fill,f_auto,g_face,h_200,q_auto,w_200/v1/portfolio/portfolio/profile?_a=BAMAMiOc0"
+                  alt="Pranav Hemanth"
+                  className="w-32 h-32 rounded-lg object-cover border-2 border-primary shadow-lg"
+                />
                 <div className="flex-1 space-y-4">
                   <div className="code-block">
                     <pre className="text-sm">
