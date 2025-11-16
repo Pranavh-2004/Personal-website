@@ -43,15 +43,15 @@ export const HomeSection = () => {
                   alt="Pranav Hemanth"
                   className="w-32 h-32 rounded-lg object-cover border-2 border-primary shadow-lg"
                 />
-                <div className="flex-1 space-y-4">
-                  <div className="code-block overflow-hidden">
-                    <pre className="text-sm overflow-x-auto">
+                <div className="flex-1 space-y-4 min-w-0">
+                  <div className="code-block overflow-x-auto">
+                    <pre className="text-xs sm:text-sm whitespace-pre">
                       <code>{`{
   "name": "Pranav Hemanth",
-  "role": "Computer Science Student & Cybersecurity Researcher",
+  "role": "CS Student & Cybersecurity Researcher",
   "location": "Bangalore, India",
   "university": "PES University",
-  "interests": ["Cybersecurity", "Machine Learning", "Operating Systems", "Web Development"],
+  "interests": ["Cybersecurity", "ML", "OS", "Web Dev"],
   "currently": "Research Intern @ C3iHub, IIT Kanpur",
   "contact": {
     "email": "pranav2004@gmail.com",
