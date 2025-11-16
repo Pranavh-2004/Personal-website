@@ -43,15 +43,16 @@ export const HomeSection = () => {
                   alt="Pranav Hemanth"
                   className="w-32 h-32 rounded-lg object-cover border-2 border-primary shadow-lg"
                 />
-                <div className="flex-1 space-y-4 min-w-0">
-                  <div className="code-block overflow-x-auto">
-                    <pre className="text-xs sm:text-sm whitespace-pre">
-                      <code>{`{
+                <div className="flex-1 space-y-4 min-w-0 w-full">
+                  <div className="code-block w-full">
+                    <div className="overflow-x-auto">
+                      <pre className="text-xs sm:text-sm whitespace-pre min-w-0">
+                        <code>{`{
   "name": "Pranav Hemanth",
-  "role": "CS Student & Cybersecurity Researcher",
+  "role": "Computer Science Student & Cybersecurity Researcher",
   "location": "Bangalore, India",
   "university": "PES University",
-  "interests": ["Cybersecurity", "ML", "OS", "Web Dev"],
+  "interests": ["Cybersecurity", "Machine Learning", "Operating Systems", "Web Development"],
   "currently": "Research Intern @ C3iHub, IIT Kanpur",
   "contact": {
     "email": "pranav2004@gmail.com",
@@ -59,7 +60,8 @@ export const HomeSection = () => {
     "linkedin": "linkedin.com/in/pranav-hemanth"
   }
 }`}</code>
-                    </pre>
+                      </pre>
+                    </div>
                   </div>
                   <div className="text-muted-foreground space-y-2">
                     <p className="flex items-start gap-2">
