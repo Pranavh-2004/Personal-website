@@ -9,37 +9,37 @@ const galleryImages = [
     id: 1,
     title: "CIE Finals Presentation",
     description: "Presenting at CIE Finals",
-    src: "/gallery/CIE_finals_me_presenting.jpeg",
+    src: "https://res.cloudinary.com/djkl22q57/image/upload/c_limit,f_auto,q_auto,w_1200/v1/portfolio/gallery/portfolio/gallery/CIE_finals_me_presenting?_a=BAMAMiOc0",
   },
   {
     id: 2,
     title: "CIDECODE Win",
     description: "Winner at CIDECODE Hackathon",
-    src: "/gallery/Cidecode_win.jpeg",
+    src: "https://res.cloudinary.com/djkl22q57/image/upload/c_limit,f_auto,q_auto,w_1200/v1/portfolio/gallery/portfolio/gallery/Cidecode_win?_a=BAMAMiOc0",
   },
   {
     id: 3,
     title: "IIT Kanpur",
     description: "At IIT Kanpur",
-    src: "/gallery/IIT_Kanpur_me.jpeg",
+    src: "https://res.cloudinary.com/djkl22q57/image/upload/c_limit,f_auto,q_auto,w_1200/v1/portfolio/gallery/portfolio/gallery/IIT_Kanpur_me?_a=BAMAMiOc0",
   },
   {
     id: 4,
     title: "IIT Madras",
     description: "At IIT Madras",
-    src: "/gallery/IIT_Madras_me.jpeg",
+    src: "https://res.cloudinary.com/djkl22q57/image/upload/c_limit,f_auto,q_auto,w_1200/v1/portfolio/gallery/portfolio/gallery/IIT_Madras_me?_a=BAMAMiOc0",
   },
   {
     id: 5,
     title: "Kodikon Win",
     description: "Winner at Kodikon 3.0",
-    src: "/gallery/Kodikon_win.jpeg",
+    src: "https://res.cloudinary.com/djkl22q57/image/upload/c_limit,f_auto,q_auto,w_1200/v1/portfolio/gallery/portfolio/gallery/Kodikon_win?_a=BAMAMiOc0",
   },
   {
     id: 6,
     title: "TAMS Patna",
     description: "Marketing at TAMS Patna",
-    src: "/gallery/TAMS_Patna_marketing.jpeg",
+    src: "https://res.cloudinary.com/djkl22q57/image/upload/c_limit,f_auto,q_auto,w_1200/v1/portfolio/gallery/portfolio/gallery/TAMS_Patna_marketing?_a=BAMAMiOc0",
   },
 ];
 

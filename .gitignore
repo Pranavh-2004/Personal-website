@@ -44,3 +44,5 @@ coverage
 .nuxt
 .turbo
 out
+
+gallery/
