@@ -44,9 +44,10 @@ export const HomeSection = () => {
                   className="w-32 h-32 rounded-lg object-cover border-2 border-primary shadow-lg flex-shrink-0"
                 />
                 <div className="flex-1 min-w-0 space-y-4">
-                  <div className="code-block">
-                    <pre className="text-xs sm:text-sm overflow-x-auto">
-                      <code>{`{
+                  <div className="code-block overflow-hidden">
+                    <div className="overflow-x-auto">
+                      <pre className="text-xs sm:text-sm">
+                        <code>{`{
   "name": "Pranav Hemanth",
   "role": "Computer Science Student & Cybersecurity Researcher",
   "location": "Bangalore, India",
@@ -59,7 +60,8 @@ export const HomeSection = () => {
     "linkedin": "linkedin.com/in/pranav-hemanth"
   }
 }`}</code>
-                    </pre>
+                      </pre>
+                    </div>
                   </div>
                   <div className="text-muted-foreground space-y-2">
                     <p className="flex items-start gap-2">
