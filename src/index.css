@@ -42,10 +42,10 @@ All colors MUST be HSL.
     --terminal-border: 0 0% 85%;
     --terminal-header: 0 0% 96%;
     --terminal-shadow: 0 0% 0%;
-    
+
     --code-bg: 0 0% 96%;
     --code-border: 0 0% 88%;
-    
+
     --radius: 0.5rem;
   }
 
@@ -84,7 +84,7 @@ All colors MUST be HSL.
     --terminal-border: 0 0% 20%;
     --terminal-header: 0 0% 12%;
     --terminal-shadow: 0 0% 0%;
-    
+
     --code-bg: 0 0% 12%;
     --code-border: 0 0% 18%;
   }
@@ -103,41 +103,41 @@ All colors MUST be HSL.
 @layer utilities {
   /* Terminal window styling */
   .terminal-window {
-    @apply bg-[hsl(var(--terminal-bg))] border border-[hsl(var(--terminal-border))] rounded-lg shadow-2xl;
+    @apply bg-[hsl(var(--terminal-bg))] border border-[hsl(var(--terminal-border))] rounded-lg shadow-2xl overflow-hidden;
   }
-  
+
   .terminal-header {
     @apply bg-[hsl(var(--terminal-header))] border-b border-[hsl(var(--terminal-border))] rounded-t-lg;
   }
-  
+
   .terminal-content {
-    @apply text-[hsl(var(--terminal-fg))];
+    @apply text-[hsl(var(--terminal-fg))] overflow-x-auto;
   }
-  
+
   /* Code block styling */
   .code-block {
     @apply bg-[hsl(var(--code-bg))] border border-[hsl(var(--code-border))] rounded-md p-4 font-mono text-sm;
   }
-  
+
   /* Typing cursor animation */
   .typing-cursor {
     @apply inline-block w-2 h-5 bg-primary ml-1 animate-blink;
   }
-  
+
   /* Command prompt */
   .command-prompt {
     @apply text-primary font-bold;
   }
-  
+
   /* Traffic light buttons */
   .traffic-lights {
     @apply flex gap-2;
   }
-  
+
   .traffic-light {
     @apply w-3 h-3 rounded-full transition-all duration-200;
   }
-  
+
   /* Smooth transitions */
   .smooth-transition {
     @apply transition-all duration-300 ease-in-out;
@@ -146,21 +146,31 @@ All colors MUST be HSL.
 
 /* Animations */
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes fadeIn {
-  from { 
+  from {
     opacity: 0;
     transform: translateY(10px);
   }
-  to { 
+  to {
     opacity: 1;
     transform: translateY(0);
   }
