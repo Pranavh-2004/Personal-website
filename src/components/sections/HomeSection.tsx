@@ -44,8 +44,8 @@ export const HomeSection = () => {
                   className="w-32 h-32 rounded-lg object-cover border-2 border-primary shadow-lg"
                 />
                 <div className="flex-1 space-y-4">
-                  <div className="code-block">
-                    <pre className="text-sm">
+                  <div className="code-block overflow-hidden">
+                    <pre className="text-sm overflow-x-auto">
                       <code>{`{
   "name": "Pranav Hemanth",
   "role": "Computer Science Student & Cybersecurity Researcher",
@@ -62,22 +62,29 @@ export const HomeSection = () => {
                     </pre>
                   </div>
                   <div className="text-muted-foreground space-y-2">
-                    <p className="flex items-center gap-2">
-                      <span className="command-prompt">›</span>
-                      Cybersecurity researcher developing graph-based threat
-                      detection frameworks
+                    <p className="flex items-start gap-2">
+                      <span className="command-prompt flex-shrink-0">›</span>
+                      <span className="break-words">
+                        Cybersecurity researcher developing graph-based threat
+                        detection frameworks
+                      </span>
                     </p>
-                    <p className="flex items-center gap-2">
-                      <span className="command-prompt">›</span>
-                      5× Hackathon Winner | Student Researcher | CTF Competitor
+                    <p className="flex items-start gap-2">
+                      <span className="command-prompt flex-shrink-0">›</span>
+                      <span className="break-words">
+                        5× Hackathon Winner | Student Researcher | CTF
+                        Competitor
+                      </span>
                     </p>
-                    <p className="flex items-center gap-2">
-                      <span className="command-prompt">›</span>
-                      Type{" "}
-                      <code className="bg-secondary px-2 py-1 rounded">
-                        help
-                      </code>{" "}
-                      to explore more
+                    <p className="flex items-start gap-2">
+                      <span className="command-prompt flex-shrink-0">›</span>
+                      <span className="break-words">
+                        Type{" "}
+                        <code className="bg-secondary px-2 py-1 rounded">
+                          help
+                        </code>{" "}
+                        to explore more
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -88,37 +95,37 @@ export const HomeSection = () => {
                   # Quick Commands
                 </div>
                 <div className="space-y-1 text-sm">
-                  <div>
+                  <div className="break-words">
                     <span className="text-primary">whoami</span>{" "}
                     <span className="text-muted-foreground">
                       // Display user info
                     </span>
                   </div>
-                  <div>
+                  <div className="break-words">
                     <span className="text-primary">ls -la</span>{" "}
                     <span className="text-muted-foreground">
                       // List all sections
                     </span>
                   </div>
-                  <div>
+                  <div className="break-words">
                     <span className="text-primary">cat resume.md</span>{" "}
                     <span className="text-muted-foreground">
                       // View resume
                     </span>
                   </div>
-                  <div>
+                  <div className="break-words">
                     <span className="text-primary">./projects.sh</span>{" "}
                     <span className="text-muted-foreground">
                       // Browse projects
                     </span>
                   </div>
-                  <div>
+                  <div className="break-words">
                     <span className="text-primary">contact --send-message</span>{" "}
                     <span className="text-muted-foreground">
                       // Get in touch
                     </span>
                   </div>
-                  <div className="pt-2 border-t border-border mt-2">
+                  <div className="pt-2 border-t border-border mt-2 break-words">
                     <span className="text-muted-foreground">
                       💡 Tip: Press{" "}
                     </span>

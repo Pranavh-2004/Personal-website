@@ -106,8 +106,10 @@ export const ContactSection = () => {
                     href="mailto:pranav2004@gmail.com"
                     className="flex items-center gap-3 text-muted-foreground hover:text-primary smooth-transition"
                   >
-                    <Mail size={20} />
-                    <span className="text-sm">pranav2004@gmail.com</span>
+                    <Mail size={20} className="flex-shrink-0" />
+                    <span className="text-sm break-all">
+                      pranav2004@gmail.com
+                    </span>
                   </a>
                   <a
                     href="https://github.com/Pranavh-2004"
@@ -115,8 +117,10 @@ export const ContactSection = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-muted-foreground hover:text-primary smooth-transition"
                   >
-                    <Github size={20} />
-                    <span className="text-sm">github.com/Pranavh-2004</span>
+                    <Github size={20} className="flex-shrink-0" />
+                    <span className="text-sm break-all">
+                      github.com/Pranavh-2004
+                    </span>
                   </a>
                   <a
                     href="https://linkedin.com/in/pranav-hemanth"
@@ -124,8 +128,8 @@ export const ContactSection = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-muted-foreground hover:text-primary smooth-transition"
                   >
-                    <Linkedin size={20} />
-                    <span className="text-sm">
+                    <Linkedin size={20} className="flex-shrink-0" />
+                    <span className="text-sm break-all">
                       linkedin.com/in/pranav-hemanth
                     </span>
                   </a>
@@ -138,27 +142,35 @@ export const ContactSection = () => {
                 </h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                    <span>Open to research opportunities</span>
+                    <div className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></div>
+                    <span className="break-words">
+                      Open to research opportunities
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                    <span>Available for collaboration</span>
+                    <div className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></div>
+                    <span className="break-words">
+                      Available for collaboration
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                    <span>Currently: Research Intern @ C3iHub, IIT Kanpur</span>
+                    <div className="w-2 h-2 rounded-full bg-blue-500 flex-shrink-0"></div>
+                    <span className="break-words">
+                      Currently: Research Intern @ C3iHub, IIT Kanpur
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                    <span>Response time: 24-48 hours</span>
+                    <div className="w-2 h-2 rounded-full bg-yellow-500 flex-shrink-0"></div>
+                    <span className="break-words">
+                      Response time: 24-48 hours
+                    </span>
                   </div>
                 </div>
               </div>
 
               <div className="code-block">
-                <pre className="text-xs text-muted-foreground">
-                  <code>{`$ curl -X POST https://pranav.dev/api/contact \\
+                <pre className="text-xs text-muted-foreground overflow-x-auto">
+                  <code className="break-words whitespace-pre-wrap">{`$ curl -X POST https://pranav.dev/api/contact \\
   --header "Content-Type: application/json" \\
   --data '{
     "name": "Your Name",
