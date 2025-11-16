@@ -43,7 +43,7 @@ export const HomeSection = () => {
                   alt="Pranav Hemanth"
                   className="w-32 h-32 rounded-lg object-cover border-2 border-primary shadow-lg flex-shrink-0"
                 />
-                <div className="flex-1 min-w-0 space-y-4">
+                <div className="md:flex-1 min-w-0 space-y-4 w-full">
                   <div className="code-block overflow-hidden">
                     <div className="overflow-x-auto">
                       <pre className="text-xs sm:text-sm">
