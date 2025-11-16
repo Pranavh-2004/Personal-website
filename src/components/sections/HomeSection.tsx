@@ -44,8 +44,8 @@ export const HomeSection = () => {
                   className="w-32 h-32 rounded-lg object-cover border-2 border-primary shadow-lg flex-shrink-0"
                 />
                 <div className="flex-1 min-w-0 space-y-4">
-                  <div className="code-block overflow-x-auto">
-                    <pre className="text-xs sm:text-sm whitespace-pre min-w-0">
+                  <div className="code-block">
+                    <pre className="text-xs sm:text-sm overflow-x-auto">
                       <code>{`{
   "name": "Pranav Hemanth",
   "role": "Computer Science Student & Cybersecurity Researcher",
