@@ -1,73 +1,95 @@
-# Welcome to your Lovable project
+# Personal Website
 
-## Project info
+A terminal-themed portfolio website showcasing my work as a Computer Science student and Cybersecurity Researcher.
 
-**URL**: https://lovable.dev/projects/ed7704e2-a81b-4873-a9fa-bf229e034de0
+## About
 
-## How can I edit this code?
+This is my personal portfolio website featuring:
 
-There are several ways of editing your application.
+- **Terminal-inspired UI** with macOS aesthetic
+- **Comprehensive Resume** with professional experience and achievements
+- **Project Showcase** highlighting hackathon wins and open-source contributions
+- **Interactive Sections** for blog, certificates, and gallery
+- **Contact Form** for networking and collaboration opportunities
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ed7704e2-a81b-4873-a9fa-bf229e034de0) and start prompting.
+- **Framework**: Vite + React 18 + TypeScript
+- **Styling**: Tailwind CSS with custom terminal theme
+- **UI Components**: shadcn/ui with Radix UI primitives
+- **Icons**: Lucide React
+- **Build Tool**: Bun (or npm/pnpm/yarn)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js 18+ or Bun installed
+- Git
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
+```bash
+# Clone the repository
+git clone https://github.com/Pranavh-2004/Personal-website.git
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Navigate to project directory
+cd Personal-website
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+bun install
+# or: npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+# Start development server
+bun run dev
+# or: npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The site will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```bash
+# Create production build
+bun run build
+# or: npm run build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Preview production build
+bun run preview
+# or: npm run preview
+```
 
-## What technologies are used for this project?
+## Project Structure
 
-This project is built with:
+```
+src/
+├── components/
+│   ├── sections/          # Page sections (Home, Resume, Projects, etc.)
+│   ├── ui/                # Reusable UI components
+│   ├── Navigation.tsx     # Main navigation bar
+│   └── TerminalWindow.tsx # Terminal-themed wrapper
+├── hooks/                 # Custom React hooks
+├── lib/                   # Utility functions
+└── pages/                 # Route pages
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Features
 
-## How can I deploy this project?
+- 🖥️ **Terminal Theme**: Authentic command-line aesthetic
+- 🎨 **Dark Mode**: Default dark theme with light mode support
+- 📱 **Responsive Design**: Optimized for all screen sizes
+- ⚡ **Fast Performance**: Built with Vite for lightning-fast HMR
+- ♿ **Accessible**: Follows WCAG guidelines
+- 🎯 **SEO Optimized**: Meta tags and semantic HTML
 
-Simply open [Lovable](https://lovable.dev/projects/ed7704e2-a81b-4873-a9fa-bf229e034de0) and click on Share -> Publish.
+## Contact
 
-## Can I connect a custom domain to my Lovable project?
+**Pranav Hemanth**
 
-Yes, you can!
+- Email: pranav2004@gmail.com
+- GitHub: [@Pranavh-2004](https://github.com/Pranavh-2004)
+- LinkedIn: [pranav-hemanth](https://linkedin.com/in/pranav-hemanth)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is open source and available under the MIT License.
