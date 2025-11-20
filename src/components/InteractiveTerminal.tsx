@@ -14,6 +14,8 @@ const commands: Record<string, string | JSX.Element> = {
       <div>• skills - List my technical skills</div>
       <div>• projects - Show my projects</div>
       <div>• contact - Get my contact information</div>
+      <div>• ls -la - List all sections</div>
+      <div>• contact --send-message - Get in touch</div>
       <div>• joke - Hear a developer joke</div>
       <div>• date - Show current date and time</div>
       <div>• clear - Clear the terminal</div>
@@ -135,6 +137,53 @@ const commands: Record<string, string | JSX.Element> = {
   ),
   joke: "Why do programmers prefer dark mode? Because light attracts bugs! 🐛",
   date: new Date().toLocaleString(),
+  "ls -la": (
+    <div className="space-y-1">
+      <div className="text-primary font-bold">Portfolio Sections:</div>
+      <div className="space-y-1 font-mono text-sm">
+        <div>drwxr-xr-x 5 pranav staff 160 Nov 20 2025 home/</div>
+        <div>drwxr-xr-x 8 pranav staff 256 Nov 20 2025 resume/</div>
+        <div>drwxr-xr-x 12 pranav staff 384 Nov 20 2025 projects/</div>
+        <div>drwxr-xr-x 6 pranav staff 192 Nov 20 2025 certificates/</div>
+        <div>drwxr-xr-x 4 pranav staff 128 Nov 20 2025 blog/</div>
+        <div>drwxr-xr-x 7 pranav staff 224 Nov 20 2025 gallery/</div>
+        <div>drwxr-xr-x 3 pranav staff 96 Nov 20 2025 contact/</div>
+      </div>
+      <div className="mt-2 text-muted-foreground text-sm">
+        Use navigation menu or scroll to explore each section
+      </div>
+    </div>
+  ),
+  "contact --send-message": (
+    <div className="space-y-3 text-sm">
+      <div className="text-primary font-bold"># Contact Pranav Hemanth</div>
+      <div className="space-y-2">
+        <div>
+          <div className="text-primary">## Email</div>
+          <div className="pl-4 break-all">📧 pranav2004@gmail.com</div>
+        </div>
+        <div>
+          <div className="text-primary">## Social</div>
+          <div className="pl-4">🐙 GitHub: github.com/Pranavh-2004</div>
+          <div className="pl-4">
+            💼 LinkedIn: linkedin.com/in/pranav-hemanth
+          </div>
+        </div>
+        <div>
+          <div className="text-primary">## Availability</div>
+          <div className="pl-4 space-y-1">
+            <div>🟢 Open to research opportunities</div>
+            <div>🟢 Available for collaboration</div>
+            <div>🔵 Currently: Research Intern @ C3iHub, IIT Kanpur</div>
+            <div>🟡 Response time: 24-48 hours</div>
+          </div>
+        </div>
+      </div>
+      <div className="text-muted-foreground text-xs mt-2">
+        → Scroll to Contact section to send a message via form
+      </div>
+    </div>
+  ),
 };
 
 export const InteractiveTerminal = () => {
@@ -188,9 +237,21 @@ export const InteractiveTerminal = () => {
       return;
     }
 
-    const output =
-      commands[trimmedInput] ||
-      `Command not found: ${input}. Type 'help' for available commands.`;
+    // Handle command with arguments
+    let output: string | JSX.Element;
+
+    if (trimmedInput === "ls -la" || trimmedInput === "ls -la //") {
+      output = commands["ls -la"];
+    } else if (
+      trimmedInput === "contact --send-message" ||
+      trimmedInput === "contact --send-message //"
+    ) {
+      output = commands["contact --send-message"];
+    } else {
+      output =
+        commands[trimmedInput] ||
+        `Command not found: ${input}. Type 'help' for available commands.`;
+    }
 
     setHistory([...history, { input, output }]);
     setInput("");
