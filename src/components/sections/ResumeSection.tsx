@@ -140,6 +140,21 @@ export const ResumeSection = () => {
                   </ul>
                 </div>
                 <div>
+                  <div className="font-semibold">Core Team (Tech &nbsp; Design Head)</div>
+                  <div className="text-muted-foreground text-sm">
+                    The Alcoding Club • Aug 2024 - Apr 2025
+                  </div>
+                  <ul className="list-disc list-inside text-sm mt-2 space-y-1">
+                    <li>
+                      Spearheaded technical workshops and coding competitions,
+                      enhancing member skills and engagement,
+                    </li>
+                    <li>
+                      Instrumental in the organization of Terrathon 4.0, PES University's largest sustainability-themed hackathon
+                    </li>
+                  </ul>
+                </div>
+                <div>
                   <div className="font-semibold">
                     Event Curator, Marketing, and Technical
                   </div>
