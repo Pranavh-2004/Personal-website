@@ -72,7 +72,7 @@ const Index = () => {
             <span className="command-prompt">$</span> echo "Built with React,
             TypeScript, and Tailwind CSS" | cowsay
           </p>
-          <p className="mt-2">© 2024 Pranav Hemanth. All rights reserved.</p>
+          <p className="mt-2">© 2025 Pranav Hemanth. All rights reserved.</p>
         </div>
       </footer>
       <InteractiveTerminal />
