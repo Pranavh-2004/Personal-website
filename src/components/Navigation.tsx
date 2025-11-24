@@ -37,7 +37,7 @@ export const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <span className="command-prompt text-lg">$</span>
-            <span className="ml-2 font-bold">pranav.dev</span>
+            <span className="ml-2 font-bold">pranav.hemanth</span>
           </div>
 
           {/* Desktop Navigation */}

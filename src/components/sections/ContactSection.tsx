@@ -170,7 +170,7 @@ export const ContactSection = () => {
 
               <div className="code-block">
                 <pre className="text-xs text-muted-foreground overflow-x-auto">
-                  <code className="break-words whitespace-pre-wrap">{`$ curl -X POST https://pranav.dev/api/contact \\
+                  <code className="break-words whitespace-pre-wrap">{`$ curl -X POST https://pranav.hemanth/api/contact \\
   --header "Content-Type: application/json" \\
   --data '{
     "name": "Your Name",
