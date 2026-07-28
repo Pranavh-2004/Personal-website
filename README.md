@@ -1,95 +1,53 @@
-# Personal Website
+# Pranav Hemanth — Portfolio
 
-A terminal-themed portfolio website showcasing my work as a Computer Science student and Cybersecurity Researcher.
+A research-focused personal website covering systems, security, AI evaluation,
+networking, and developer infrastructure. The interface uses restrained terminal
+accents, an interactive command palette, and dedicated routes for deeper content.
 
-## About
+## Stack
 
-This is my personal portfolio website featuring:
+- React 18, TypeScript, and Vite
+- Lightweight History API routing
+- Tailwind CSS plus a custom responsive design system
+- Radix Dialog and Lucide icons
+- Vitest and Testing Library
 
-- **Terminal-inspired UI** with macOS aesthetic
-- **Comprehensive Resume** with professional experience and achievements
-- **Project Showcase** highlighting hackathon wins and open-source contributions
-- **Interactive Sections** for blog, certificates, and gallery
-- **Contact Form** for networking and collaboration opportunities
+## Local Development
 
-## Tech Stack
-
-- **Framework**: Vite + React 18 + TypeScript
-- **Styling**: Tailwind CSS with custom terminal theme
-- **UI Components**: shadcn/ui with Radix UI primitives
-- **Icons**: Lucide React
-- **Build Tool**: Bun (or npm/pnpm/yarn)
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ or Bun installed
-- Git
-
-### Installation
+Requires Node.js 18 or newer.
 
 ```bash
-# Clone the repository
-git clone https://github.com/Pranavh-2004/Personal-website.git
-
-# Navigate to project directory
-cd Personal-website
-
-# Install dependencies
-bun install
-# or: npm install
-
-# Start development server
-bun run dev
-# or: npm run dev
+npm install
+npm run dev
 ```
 
-The site will be available at `http://localhost:8080`
+The development server prints the local URL when it starts.
 
-### Build for Production
+## Checks
 
 ```bash
-# Create production build
-bun run build
-# or: npm run build
-
-# Preview production build
-bun run preview
-# or: npm run preview
+npm run lint
+npm run typecheck
+npm run test
+npm run build
 ```
 
-## Project Structure
+## Content
 
-```
-src/
-├── components/
-│   ├── sections/          # Page sections (Home, Resume, Projects, etc.)
-│   ├── ui/                # Reusable UI components
-│   ├── Navigation.tsx     # Main navigation bar
-│   └── TerminalWindow.tsx # Terminal-themed wrapper
-├── hooks/                 # Custom React hooks
-├── lib/                   # Utility functions
-└── pages/                 # Route pages
-```
+Portfolio copy and structured data live in
+`src/content/portfolio.ts`. Update that file for roles, publications, projects,
+skills, certificates, gallery entries, and external links.
 
-## Features
+The downloadable CV is served from `public/cv.pdf`. The profile photo and gallery
+images use the existing Cloudinary assets, with responsive transformations added
+at the URL level.
 
-- 🖥️ **Terminal Theme**: Authentic command-line aesthetic
-- 🎨 **Dark Mode**: Default dark theme with light mode support
-- 📱 **Responsive Design**: Optimized for all screen sizes
-- ⚡ **Fast Performance**: Built with Vite for lightning-fast HMR
-- ♿ **Accessible**: Follows WCAG guidelines
-- 🎯 **SEO Optimized**: Meta tags and semantic HTML
+## Routes
 
-## Contact
+- `/` — current positioning and selected work
+- `/research` — publications and research notes
+- `/projects` — filterable project index
+- `/experience` — research, professional, and academic history
+- `/archive` — certificates and gallery
 
-**Pranav Hemanth**
-
-- Email: pranav2004@gmail.com
-- GitHub: [@Pranavh-2004](https://github.com/Pranavh-2004)
-- LinkedIn: [pranav-hemanth](https://linkedin.com/in/pranav-hemanth)
-
-## License
-
-This project is open source and available under the MIT License.
+Vercel's SPA rewrite is configured in `vercel.json`.
