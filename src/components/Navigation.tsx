@@ -1,116 +1,141 @@
-import { useState } from "react";
-import { Moon, Sun, Menu, X } from "lucide-react";
-import { Button } from "./ui/button";
+import { useEffect, useState } from "react";
+import {
+  Command,
+  FileText,
+  Menu,
+  Moon,
+  Sun,
+  X,
+} from "lucide-react";
 
-interface NavigationProps {
-  activeSection: string;
-  onNavigate: (section: string) => void;
-}
+import { navigation, profile } from "@/content/portfolio";
+import { NavLink } from "@/lib/router";
 
-export const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
-  const [isDark, setIsDark] = useState(true);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+type NavigationProps = {
+  onOpenTerminal: () => void;
+};
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle("dark");
-  };
+const getInitialTheme = () => {
+  const saved = window.localStorage.getItem("portfolio-theme");
+  if (saved === "dark" || saved === "light") return saved;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
 
-  const sections = [
-    { id: "home", label: "~/home" },
-    { id: "resume", label: "~/resume" },
-    { id: "projects", label: "~/projects" },
-    // { id: "blog", label: "~/blog" },
-    { id: "certificates", label: "~/certificates" },
-    { id: "gallery", label: "~/gallery" },
-    { id: "contact", label: "~/contact" },
-  ];
+export const Navigation = ({ onOpenTerminal }: NavigationProps) => {
+  const [theme, setTheme] = useState(getInitialTheme);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleNavClick = (sectionId: string) => {
-    onNavigate(sectionId);
-    setIsMobileMenuOpen(false);
-  };
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    window.localStorage.setItem("portfolio-theme", theme);
+  }, [theme]);
+
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
+
+  const navItems = navigation.map((item) => (
+    <NavLink
+      key={item.href}
+      to={item.href}
+      end={item.href === "/"}
+      onClick={() => setIsMenuOpen(false)}
+      className={({ isActive }) =>
+        `site-nav-link ${isActive ? "site-nav-link-active" : ""}`
+      }
+    >
+      {item.label}
+    </NavLink>
+  ));
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <span className="command-prompt text-lg">$</span>
-            <span className="ml-2 font-bold">pranav.hemanth</span>
-          </div>
+    <header className="site-header">
+      <div className="site-header-inner">
+        <NavLink to="/" className="site-brand" aria-label="Pranav Hemanth home">
+          <span aria-hidden="true" className="site-brand-mark">
+            &gt;_
+          </span>
+          <span>pranav.hemanth</span>
+        </NavLink>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            {sections.map((section) => (
-              <button
-                key={section.id}
-                onClick={() => handleNavClick(section.id)}
-                className={`px-3 py-2 rounded-md text-sm font-mono smooth-transition ${
-                  activeSection === section.id
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                }`}
-              >
-                {section.label}
-              </button>
-            ))}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="ml-4"
-            >
-              {isDark ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </Button>
-          </div>
+        <nav className="site-nav-desktop" aria-label="Primary navigation">
+          {navItems}
+        </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-2">
-            <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {isDark ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
-            </Button>
-          </div>
+        <div className="site-header-actions">
+          <a
+            href={profile.links.cv}
+            className="icon-command icon-command-cv"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open CV"
+            title="Open CV"
+          >
+            <FileText aria-hidden="true" size={17} />
+            <span>CV</span>
+          </a>
+          <button
+            type="button"
+            className="icon-command"
+            onClick={onOpenTerminal}
+            aria-label="Open interactive terminal"
+            title="Open terminal (Command or Control K)"
+          >
+            <Command aria-hidden="true" size={18} />
+          </button>
+          <button
+            type="button"
+            className="icon-command"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+          >
+            {theme === "dark" ? (
+              <Sun aria-hidden="true" size={18} />
+            ) : (
+              <Moon aria-hidden="true" size={18} />
+            )}
+          </button>
+          <button
+            type="button"
+            className="icon-command site-menu-button"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
+            aria-label={isMenuOpen ? "Close navigation" : "Open navigation"}
+          >
+            {isMenuOpen ? (
+              <X aria-hidden="true" size={20} />
+            ) : (
+              <Menu aria-hidden="true" size={20} />
+            )}
+          </button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden pb-4 animate-fade-in">
-            {sections.map((section) => (
-              <button
-                key={section.id}
-                onClick={() => handleNavClick(section.id)}
-                className={`block w-full text-left px-3 py-2 rounded-md text-sm font-mono smooth-transition ${
-                  activeSection === section.id
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                }`}
-              >
-                {section.label}
-              </button>
-            ))}
-          </div>
-        )}
       </div>
-    </nav>
+
+      {isMenuOpen && (
+        <nav
+          id="mobile-navigation"
+          className="site-nav-mobile"
+          aria-label="Mobile navigation"
+        >
+          {navItems}
+          <a
+            href={profile.links.cv}
+            target="_blank"
+            rel="noreferrer"
+            className="site-nav-link"
+          >
+            CV
+          </a>
+        </nav>
+      )}
+    </header>
   );
 };
